@@ -1,0 +1,28 @@
+{
+  "mappings": {
+    "properties": {
+      "eventID": {
+        "type": "keyword"
+      },
+      "eventTime": {
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss"
+      },
+      "companyID": {
+        "type": "keyword"
+      },
+      "deviceID": {
+        "type": "keyword"
+      },
+      "eventDetail": {
+        "type": "keyword"
+      },
+      "deviceType": {
+        "type": "keyword"
+      },
+      "deviceDN": {
+        "type": "keyword"
+      }
+    }
+  }
+}

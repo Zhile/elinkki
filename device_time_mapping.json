@@ -1,0 +1,43 @@
+{
+  "mappings": {
+    "properties": {
+      "eventID": {
+        "type": "keyword"
+      },
+      "deviceID": {
+        "type": "keyword"
+      },
+      "runtimeHour": {
+        "type": "float"
+      },
+      "warningHour": {
+        "type": "float"
+      },
+      "standbyHour": {
+        "type": "float"
+      },
+      "offlineHour": {
+        "type": "float"
+      },
+      "eventTime": {
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss"
+      },
+      "deviceName": {
+        "type": "keyword"
+      },
+      "deviceBrand": {
+        "type": "keyword"
+      },
+      "deviceType": {
+        "type": "keyword"
+      },
+      "deviceFactory": {
+        "type": "keyword"
+      },
+      "deviceDN": {
+        "type": "keyword"
+      }
+    }
+  }
+}

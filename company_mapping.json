@@ -1,0 +1,48 @@
+{
+  "mappings": {
+    "properties": {
+      "companyID": {
+        "type": "keyword"
+      },
+      "companyNO": {
+        "type": "keyword"
+      },
+      "clientName": {
+        "type": "keyword"
+      },
+      "client": {
+        "type": "keyword"
+      },
+      "address": {
+        "type": "keyword"
+      },
+      "province": {
+        "type": "keyword"
+      },
+      "city": {
+        "type": "keyword"
+      },
+      "district": {
+        "type": "keyword"
+      },
+      "deviceID": {
+        "type": "keyword"
+      },
+      "deviceName": {
+        "type": "keyword"
+      },
+      "deviceBrand": {
+        "type": "keyword"
+      },
+      "deviceType": {
+        "type": "keyword"
+      },
+      "deviceFactory": {
+        "type": "keyword"
+      },
+      "deviceDN": {
+        "type": "keyword"
+      }
+    }
+  }
+}
