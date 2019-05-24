@@ -340,12 +340,64 @@ def get_oee_by_month(month):
     for item in res:
         values = item["values"]
         for value in values:
-            if value["month"] == month:
+            if month is not None and value["month"] == month:
                 new_values = list()
                 new_values.append(value)
                 item["values"] = new_values
                 break
     return res
+
+
+def get_oee_by_status(status):
+    res = get_overall_oee()
+    result = list()
+    for item in res:
+        values = item["values"]
+        found = False
+        for value in values:
+            if status == ">50%":
+                if value["oee"] > 0.5:
+                    new_values = list()
+                    new_values.append(value)
+                    item["values"] = new_values
+                    found = True
+                    break
+            elif status == "<50%":
+                if value["oee"] < 0.5:
+                    new_values = list()
+                    new_values.append(value)
+                    item["values"] = new_values
+                    found = True
+                    break
+        if found:
+            result.append(item)
+    return result
+
+def get_oee_by_month_status(res, status):
+    result = list()
+    for item in res:
+        values = item["values"]
+        found = False
+        for value in values:
+            if status is not None and status == ">50%":
+                if value["oee"] > 0.5:
+                    new_values = list()
+                    new_values.append(value)
+                    item["values"] = new_values
+                    found = True
+                    break
+            elif status is not None and status == "<50%":
+                if value["oee"] < 0.5:
+                    new_values = list()
+                    new_values.append(value)
+                    item["values"] = new_values
+                    found = True
+                    break
+        if found:
+            result.append(item)
+
+    return result
+
 
 def get_overall_oee():
     res = get_detailed_oee()
@@ -357,10 +409,26 @@ def get_overall_oee():
         performance = 0
         good_ratio = 0
         values = item["values"]
+        new_value = dict()
+        new_values = list()
+        count = 0
         for value in values:
-            total_running_hour += values["total_running_hour"]
-            total_standby_hour += values["total_standby_hour"]
-            total_warning_hour += values["total_warning_hour"]
-            total_offline_hour += values["total_offline_hour"]
-            performance += values["performance"]
-            good_ratio += values["good_ratio"]
+            count += 1
+            total_running_hour += value["total_running_hour"]
+            total_standby_hour += value["total_standby_hour"]
+            total_warning_hour += value["total_warning_hour"]
+            total_offline_hour += value["total_offline_hour"]
+            performance += value["performance"]
+            good_ratio += value["good_ratio"]
+        new_value["total_running_hour"] = total_running_hour
+        new_value["total_standby_hour"] = total_standby_hour
+        new_value["total_warning_hour"] = total_warning_hour
+        new_value["total_offline_hour"] = total_offline_hour
+        new_value["performance"] = performance / count
+        new_value["good_ratio"] = good_ratio / count
+        new_value["time_ratio"] = total_running_hour / (
+                        total_running_hour + total_standby_hour + total_warning_hour + total_offline_hour)
+        new_value["oee"] = new_value["time_ratio"] * new_value["performance"] * new_value["good_ratio"]
+        new_values.append(new_value)
+        item["values"] = new_values
+    return res
