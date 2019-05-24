@@ -1,0 +1,38 @@
+{
+  "aggs": {
+    "avg_hour": {
+      "filter": {
+        "term": {
+          "deviceID": "91538"
+        }
+      },
+      "aggs": {
+        "hour_sum": {
+          "date_histogram": {
+            "field": "eventTime",
+            "interval": "month",
+            "format": "yyyy-MM"
+          },
+          "aggs": {
+            "total_running_hour": {
+              "sum": {
+                "field": "runtimeHour"
+              }
+            },
+            "total_warning_hour": {
+              "sum": {
+                "field": "warningHour"
+              }
+            },
+            "total_standby_hour": {
+              "sum": {
+                "field": "standbyHour"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "size": 0
+}

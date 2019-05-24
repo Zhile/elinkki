@@ -15,6 +15,11 @@
         "type": "keyword"
       },
       "eventDetail": {
+        "type": "text",
+        "analyzer": "ik_max_word",
+        "search_analyzer": "ik_smart"
+      },
+      "eventDetail_keyword": {
         "type": "keyword"
       },
       "deviceType": {

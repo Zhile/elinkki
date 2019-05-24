@@ -1,0 +1,41 @@
+{
+  "aggs": {
+    "avg_hour": {
+      "terms": {
+        "field": "deviceID"
+      },
+      "aggs": {
+        "hour_sum": {
+          "date_histogram": {
+            "field": "eventTime",
+            "interval": "month",
+            "format": "yyyy-MM"
+          },
+          "aggs": {
+            "total_running_hour": {
+              "sum": {
+                "field": "runtimeHour"
+              }
+            },
+            "total_warning_hour": {
+              "sum": {
+                "field": "warningHour"
+              }
+            },
+            "total_offline_hour": {
+              "sum": {
+                "field": "offlineHour"
+              }
+            },
+            "total_standby_hour": {
+              "sum": {
+                "field": "standbyHour"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "size": 0
+}

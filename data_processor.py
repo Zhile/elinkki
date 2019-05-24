@@ -64,6 +64,9 @@ def process_records(file, index):
                     values[header[i]] = year + "-" + month + "-" + day + " " + row[i].split(" ")[1]
                 elif header[i] == "eventTime" and row[i] == "":
                     continue
+                elif header[i] == "eventDetail":
+                    values[header[i]] = row[i]
+                    values["eventDetail_keyword"] = row[i]
                 else:
                     values[header[i]] = row[i]
 
@@ -74,7 +77,6 @@ def process_records(file, index):
                 docs.clear()
         if len(docs) != 0:
             bulk_docs_to_local(docs, index=index)
-
 
 if __name__ == "__main__":
     init_index()

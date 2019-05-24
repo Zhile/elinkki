@@ -1,0 +1,102 @@
+{
+  "115099": {
+    "2019-01": {
+      "performance": 0.87,
+      "good_ratio": 0.86
+    },
+    "2019-02": {
+      "performance": 0.91,
+      "good_ratio": 0.96
+    }
+  },
+  "115100": {
+    "2019-01": {
+      "performance": 0.92,
+      "good_ratio": 0.82
+    },
+    "2019-02": {
+      "performance": 0.82,
+      "good_ratio": 0.92
+    }
+  },
+  "115103": {
+    "2019-01": {
+      "performance": 0.89,
+      "good_ratio": 0.81
+    },
+    "2019-02": {
+      "performance": 0.8,
+      "good_ratio": 0.86
+    }
+  },
+  "115101": {
+    "2019-01": {
+      "performance": 0.84,
+      "good_ratio": 0.99
+    },
+    "2019-02": {
+      "performance": 0.87,
+      "good_ratio": 0.89
+    }
+  },
+  "115102": {
+    "2019-01": {
+      "performance": 0.92,
+      "good_ratio": 0.76
+    },
+    "2019-02": {
+      "performance": 0.95,
+      "good_ratio": 0.73
+    }
+  },
+  "91539": {
+    "2019-01": {
+      "performance": 0.82,
+      "good_ratio": 0.83
+    },
+    "2019-02": {
+      "performance": 0.81,
+      "good_ratio": 0.89
+    }
+  },
+  "91538": {
+    "2019-01": {
+      "performance": 0.96,
+      "good_ratio": 0.85
+    },
+    "2019-02": {
+      "performance": 0.82,
+      "good_ratio": 0.85
+    }
+  },
+  "91542": {
+    "2019-01": {
+      "performance": 0.89,
+      "good_ratio": 0.7
+    },
+    "2019-02": {
+      "performance": 0.82,
+      "good_ratio": 0.73
+    }
+  },
+  "114197": {
+    "2019-01": {
+      "performance": 0.8,
+      "good_ratio": 0.88
+    },
+    "2019-02": {
+      "performance": 0.91,
+      "good_ratio": 0.8
+    }
+  },
+  "91541": {
+    "2019-01": {
+      "performance": 0.87,
+      "good_ratio": 0.99
+    },
+    "2019-02": {
+      "performance": 0.91,
+      "good_ratio": 0.78
+    }
+  }
+}
