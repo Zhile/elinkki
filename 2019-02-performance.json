@@ -1,0 +1,182 @@
+[
+  {
+    "deviceID": "115099",
+    "values": [
+      {
+        "month": "2019-02",
+        "total_running_hour": 521.3415012359619,
+        "total_standby_hour": 51.36748310923576,
+        "total_warning_hour": 40.98644116520882,
+        "total_offline_hour": 58.30606048926711,
+        "standby_ratio": 0.3409497431570712,
+        "break_ratio": 0.2720459664820098,
+        "offline_ratio": 0.387004290360919,
+        "time_ratio": 0.7758040898680619,
+        "performance": 0.91,
+        "good_ratio": 0.96,
+        "oee": 0.6777424529087389
+      }
+    ],
+    "name": "塑料注射成型机6"
+  },
+  {
+    "deviceID": "115100",
+    "values": [
+      {
+        "month": "2019-02",
+        "total_running_hour": 520.92613697052,
+        "total_standby_hour": 51.30542381107807,
+        "total_warning_hour": 40.965969264507294,
+        "total_offline_hour": 58.637509098276496,
+        "standby_ratio": 0.3399761251458127,
+        "break_ratio": 0.2714615816190252,
+        "offline_ratio": 0.38856229323516206,
+        "time_ratio": 0.7753780416602676,
+        "performance": 0.82,
+        "good_ratio": 0.92,
+        "oee": 0.5849451946285058
+      }
+    ],
+    "name": "塑料注射成型机7"
+  },
+  {
+    "deviceID": "115101",
+    "values": [
+      {
+        "month": "2019-02",
+        "total_running_hour": 520.9063062667847,
+        "total_standby_hour": 51.30542393028736,
+        "total_warning_hour": 40.96596843004227,
+        "total_offline_hour": 58.65734297595918,
+        "standby_ratio": 0.3399314505350636,
+        "break_ratio": 0.2714259040120145,
+        "offline_ratio": 0.38864264545292193,
+        "time_ratio": 0.7753485216011419,
+        "performance": 0.87,
+        "good_ratio": 0.89,
+        "oee": 0.6003523602757641
+      }
+    ],
+    "name": "塑料注射成型机8"
+  },
+  {
+    "deviceID": "115102",
+    "values": [
+      {
+        "month": "2019-02",
+        "total_running_hour": 520.8856153488159,
+        "total_standby_hour": 51.28473940491676,
+        "total_warning_hour": 41.007676154375076,
+        "total_offline_hour": 58.657120482996106,
+        "standby_ratio": 0.3397475788898717,
+        "break_ratio": 0.2716648042090499,
+        "offline_ratio": 0.38858761690107835,
+        "time_ratio": 0.7753175972859839,
+        "performance": 0.95,
+        "good_ratio": 0.73,
+        "oee": 0.5376827537178298
+      }
+    ],
+    "name": "塑料注射成型机9"
+  },
+  {
+    "deviceID": "115103",
+    "values": [
+      {
+        "month": "2019-02",
+        "total_running_hour": 520.9053392410278,
+        "total_standby_hour": 51.26405027508736,
+        "total_warning_hour": 41.028364449739456,
+        "total_offline_hour": 58.63739770837128,
+        "standby_ratio": 0.3396548995101743,
+        "break_ratio": 0.27183737784010503,
+        "offline_ratio": 0.3885077226497206,
+        "time_ratio": 0.7753469551911981,
+        "performance": 0.8,
+        "good_ratio": 0.86,
+        "oee": 0.5334387051715443
+      }
+    ],
+    "name": "塑料注射成型机10"
+  },
+  {
+    "deviceID": "91538",
+    "values": [
+      {
+        "month": "2019-02",
+        "total_running_hour": 496.5220226049423,
+        "total_standby_hour": 48.673651821911335,
+        "total_warning_hour": 38.85072545334697,
+        "total_offline_hour": 87.88196095824242,
+        "standby_ratio": 0.27749083819945564,
+        "break_ratio": 0.221489860883071,
+        "offline_ratio": 0.5010193009174734,
+        "time_ratio": 0.7389508339629751,
+        "performance": 0.82,
+        "good_ratio": 0.85,
+        "oee": 0.5150487312721936
+      }
+    ],
+    "name": "塑料注射成型机"
+  },
+  {
+    "deviceID": "91539",
+    "values": [
+      {
+        "month": "2019-02",
+        "total_running_hour": 519.7103942632675,
+        "total_standby_hour": 50.99425721913576,
+        "total_warning_hour": 40.715974133461714,
+        "total_offline_hour": 60.633202536031604,
+        "standby_ratio": 0.3347322291318128,
+        "break_ratio": 0.26726438477963677,
+        "offline_ratio": 0.39800338608855046,
+        "time_ratio": 0.7733166191351615,
+        "performance": 0.81,
+        "good_ratio": 0.89,
+        "oee": 0.5574839507345379
+      }
+    ],
+    "name": "塑料注射成型机1"
+  },
+  {
+    "deviceID": "91541",
+    "values": [
+      {
+        "month": "2019-02",
+        "total_running_hour": 496.29419124126434,
+        "total_standby_hour": 48.65232194960117,
+        "total_warning_hour": 38.87105283513665,
+        "total_offline_hour": 87.82022658735514,
+        "standby_ratio": 0.27746847657336016,
+        "break_ratio": 0.2216850374405691,
+        "offline_ratio": 0.5008464859860707,
+        "time_ratio": 0.7389313059799283,
+        "performance": 0.91,
+        "good_ratio": 0.78,
+        "oee": 0.5244934409845531
+      }
+    ],
+    "name": "塑料注射成型机3"
+  },
+  {
+    "deviceID": "91542",
+    "values": [
+      {
+        "month": "2019-02",
+        "total_running_hour": 496.4811028242111,
+        "total_standby_hour": 48.631521709263325,
+        "total_warning_hour": 38.87161086127162,
+        "total_offline_hour": 87.82022659480572,
+        "standby_ratio": 0.27738187279084026,
+        "break_ratio": 0.2217138152401775,
+        "offline_ratio": 0.5009043119689822,
+        "time_ratio": 0.7390262061580839,
+        "performance": 0.82,
+        "good_ratio": 0.73,
+        "oee": 0.442381087006229
+      }
+    ],
+    "name": "塑料注射成型机4"
+  }
+]

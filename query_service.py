@@ -296,7 +296,8 @@ def get_summary():
     result["mtbf_by_month"] = mtbf_by_month
     result["mttr_by_month"] = mttr_by_month
     result["total_hour_by_day"] = total_hour
-    print(json.dumps(result))
+    return result
+    # print(json.dumps(result))
 
 
 def get_device_name():

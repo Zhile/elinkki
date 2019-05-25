@@ -14,27 +14,36 @@ def hello_world():
 
 @app.route("/summary", methods=['GET'])
 def get_summary():
-    return query_service.get_summary()
+    return json.dumps(query_service.get_summary())
 
 
 @app.route("/performance", methods=['GET'])
 def get_performance():
-    month = request.form['month']
-    status = request.form['status']
+    print("performance")
+    if "month" in request.args:
+        month = request.args['month']
+    else:
+        month = None
+    print(month)
+    if "status" in request.args:
+        status = request.args['status']
+    else:
+        status = None
+    print(status)
     if month is None and status is None:
-        return query_service.get_overall_oee()
+        return json.dumps(query_service.get_overall_oee())
     elif status is None:
-        return query_service.get_oee_by_month(month)
+        return json.dumps(query_service.get_oee_by_month(month))
     elif month is None:
-        return query_service.get_oee_by_status(status)
+        return json.dumps(query_service.get_oee_by_status(status))
     else:
         res = query_service.get_oee_by_month(month)
-        return query_service.get_oee_by_month_status(res, status)
+        return json.dumps(query_service.get_oee_by_month_status(res, status))
 
 
 @app.route("/device/<device_id>", methods=['GET'])
 def get_device_detail(device_id):
-    query_service.get_device_detail(device_id)
+    return json.dumps(query_service.get_device_detail(device_id))
 
 
 if __name__ == "__main__":
