@@ -12,6 +12,7 @@ with open("./total_hour_query.json", "r") as total_hour_query_file:
 with open("./performance.json") as performance_file:
     random_performance = json.loads(performance_file.read())
 
+
 def query_total_hour():
     res = es.search(index=device_time_index, body=total_hour_query)
     return res
@@ -61,7 +62,7 @@ def get_ratio():
             break_ratio = total_warning_hour / (total_standby_hour + total_warning_hour + total_offline_hour)
             offline_ration = total_offline_hour / (total_standby_hour + total_warning_hour + total_offline_hour)
             time_ratio = total_running_hour / (
-                        total_running_hour + total_standby_hour + total_warning_hour + total_offline_hour)
+                    total_running_hour + total_standby_hour + total_warning_hour + total_offline_hour)
             value["standby_ratio"] = standby_ratio
             value["break_ratio"] = break_ratio
             value["offline_ratio"] = offline_ration
@@ -297,6 +298,7 @@ def get_summary():
     result["total_hour_by_day"] = total_hour
     print(json.dumps(result))
 
+
 def get_device_name():
     body = '''
     {
@@ -335,6 +337,7 @@ def get_detailed_oee():
         r["name"] = name
     return res
 
+
 def get_oee_by_month(month):
     res = get_detailed_oee()
     for item in res:
@@ -372,6 +375,7 @@ def get_oee_by_status(status):
         if found:
             result.append(item)
     return result
+
 
 def get_oee_by_month_status(res, status):
     result = list()
@@ -427,8 +431,21 @@ def get_overall_oee():
         new_value["performance"] = performance / count
         new_value["good_ratio"] = good_ratio / count
         new_value["time_ratio"] = total_running_hour / (
-                        total_running_hour + total_standby_hour + total_warning_hour + total_offline_hour)
+                total_running_hour + total_standby_hour + total_warning_hour + total_offline_hour)
         new_value["oee"] = new_value["time_ratio"] * new_value["performance"] * new_value["good_ratio"]
         new_values.append(new_value)
         item["values"] = new_values
     return res
+
+
+def get_device_detail(device_id):
+    body = {
+        "query": {
+            "match": {
+                "deviceID": device_id
+            }
+        }
+    }
+    res = es.search(index=company_index, body=body)
+    return res["hits"]["hits"][0]["_source"]
+

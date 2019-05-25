@@ -78,6 +78,7 @@ def process_records(file, index):
         if len(docs) != 0:
             bulk_docs_to_local(docs, index=index)
 
+
 if __name__ == "__main__":
     init_index()
     device_time_file = "./device_time_with_header.csv"

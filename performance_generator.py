@@ -4,6 +4,7 @@ import json
 es = Elasticsearch("localhost:9200")
 realtime_event_index = "realtime-event"
 
+
 def get_device_count():
     body = '''
     {
