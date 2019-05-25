@@ -264,8 +264,15 @@ def get_summary():
     total_break_hour = 0
     mtbf = dict()
     mttr = dict()
+    total_standby_hour = 0
+    total_offline_hour = 0
+    total_warning_hour = 0
     for device in res:
         for value in device["values"]:
+            total_warning_hour += value["total_warning_hour"]
+            total_standby_hour += value["total_standby_hour"]
+            total_offline_hour += value["total_offline_hour"]
+
             total_running_hour += value["total_running_hour"]
             total_break_hour += value["total_warning_hour"]
             if value["month"] not in mtbf:
@@ -296,6 +303,9 @@ def get_summary():
     result["mtbf_by_month"] = mtbf_by_month
     result["mttr_by_month"] = mttr_by_month
     result["total_hour_by_day"] = total_hour
+    result["total_offline_hour"] = total_offline_hour
+    result["total_standby_hour"] = total_standby_hour
+    result["total_warning_hour"] = total_warning_hour
     return result
     # print(json.dumps(result))
 
