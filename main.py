@@ -27,15 +27,26 @@ def get_performance():
         status = request.args['status']
     else:
         status = None
+
+    if "device_id" in request.args:
+        device_id = request.args["device_id"]
+    else:
+        device_id = None
     if month is None and status is None:
-        return Response(json.dumps(query_service.get_overall_oee()), mimetype='application/json')
+        result = query_service.get_overall_oee()
     elif status is None:
-        return Response(json.dumps(query_service.get_oee_by_month(month)), mimetype='application/json')
+        result = query_service.get_oee_by_month(month)
     elif month is None:
-        return Response(json.dumps(query_service.get_oee_by_status(status)), mimetype='application/json')
+        result = query_service.get_oee_by_status(status)
     else:
         res = query_service.get_oee_by_month(month)
-        return Response(json.dumps(query_service.get_oee_by_month_status(res, status)), mimetype='application/json')
+        result = query_service.get_oee_by_month_status(res, status)
+    if device_id is not None:
+        for r in result:
+            if device_id == r["deviceID"]:
+                result = r
+                break
+    return Response(json.dumps(result), mimetype='application/json')
 
 
 @app.route("/device/<device_id>", methods=['GET'])
