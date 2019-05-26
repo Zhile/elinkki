@@ -71,6 +71,7 @@ def get_ratio():
             value["performance"] = random_performance[device["deviceID"]][month]["performance"]
             value["good_ratio"] = random_performance[device["deviceID"]][month]["good_ratio"]
             value["oee"] = value["time_ratio"] * value["performance"] * value["good_ratio"]
+            value["month"] = month
     return device_hours
 
 
@@ -244,7 +245,7 @@ def get_total_hour_by_day():
     res = es.search(index=device_time_index, body=body)
     buckets = res["aggregations"]["hour_sum"]["buckets"]
     result = dict()
-    print(res)
+    # print(res)
     for r in buckets:
         total_hour = dict()
         total_hour["total_standby_hour"] = r["total_standby_hour"]["value"]
@@ -444,6 +445,7 @@ def get_overall_oee():
         new_value["time_ratio"] = total_running_hour / (
                 total_running_hour + total_standby_hour + total_warning_hour + total_offline_hour)
         new_value["oee"] = new_value["time_ratio"] * new_value["performance"] * new_value["good_ratio"]
+        new_value["month"] = value["month"]
         new_values.append(new_value)
         item["values"] = new_values
     return res
