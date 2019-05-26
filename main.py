@@ -47,7 +47,7 @@ def get_device_detail(device_id):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=9099)
     # query_service.get_summary()
     # print(json.dumps(query_service.get_oee_by_month("2019-01")))
     # print(json.dumps(query_service.get_oee_by_status("<50%")))
