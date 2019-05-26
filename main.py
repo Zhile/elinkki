@@ -4,7 +4,7 @@ from flask import Flask, Response
 from flask import request
 import query_service
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='/opt/elinkki/apps/frontend', static_url_path='')
 
 
 @app.route("/health", methods=['GET'])
@@ -52,6 +52,11 @@ def get_performance():
 @app.route("/device/<device_id>", methods=['GET'])
 def get_device_detail(device_id):
     return Response(json.dumps(query_service.get_device_detail(device_id)), mimetype='application/json')
+
+
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
 
 
 if __name__ == "__main__":
