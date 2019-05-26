@@ -445,7 +445,6 @@ def get_overall_oee():
         new_value["time_ratio"] = total_running_hour / (
                 total_running_hour + total_standby_hour + total_warning_hour + total_offline_hour)
         new_value["oee"] = new_value["time_ratio"] * new_value["performance"] * new_value["good_ratio"]
-        new_value["month"] = value["month"]
         new_values.append(new_value)
         item["values"] = new_values
     return res
