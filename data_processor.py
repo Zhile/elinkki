@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 from elasticsearch import Elasticsearch
 from elasticsearch import helpers
 import csv
@@ -37,7 +38,7 @@ def init_index():
 
 
 def process_records(file, index):
-    with open(file, "r") as csv_file:
+    with open(file, "r", encoding="utf-8") as csv_file:
         reader = csv.reader(csv_file, delimiter=",")
         line_count = 0
         header = list()
